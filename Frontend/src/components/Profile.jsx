@@ -24,7 +24,7 @@ const Profile = () => {
   const isLoggedInUserProfile = user?._id === userProfile?._id;
   const handleClick = async () => {
     try {
-      const res = await axios.post(`http://localhost:4000/api/v1/user/followorunfollow/${userId}`, null, { withCredentials: true });
+      const res = await axios.post(`https://instagram-clone-gi9m.onrender.com/api/v1/user/followorunfollow/${userId}`, null, { withCredentials: true });
       toast.success(res?.data?.message);
       setIsFollwing(!isFollwing)
     } catch (error) {

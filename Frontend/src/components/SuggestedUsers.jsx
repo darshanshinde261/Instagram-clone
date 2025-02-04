@@ -17,7 +17,7 @@ const SuggestedUsers = () => {
     const {follow} = useSelector((state)=>state.chat)
     const handleFollow = async(userid) => {
         try{
-            const res = await axios.post(`http://localhost:4000/api/v1/user/followorunfollow/${userid}`,null,{withCredentials:true});
+            const res = await axios.post(`https://instagram-clone-gi9m.onrender.com/api/v1/user/followorunfollow/${userid}`,null,{withCredentials:true});
             toast.success(res?.data?.message);
             dispatch(setFollow(!follow))
         }catch(error){

@@ -28,7 +28,7 @@ const Commnetdialog = ({ open, setOpen }) => {
 
     const sendMessageHandler = async(req,res) =>{
         try{
-            const res = await axios.post(`http://localhost:4000/api/v1/post/${selectedPost?._id}/comment`,{text},{
+            const res = await axios.post(`https://instagram-clone-gi9m.onrender.com/api/v1/post/${selectedPost?._id}/comment`,{text},{
                 withCredentials:true
             });
             if(res.data.success){

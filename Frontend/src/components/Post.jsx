@@ -31,7 +31,7 @@ const Post = ({ post }) => {
     }
     const deletePostHandler = async (req, res) => {
         try {
-            const res = await axios.delete(`http://localhost:4000/api/v1/post/delete/${post?._id}`, { withCredentials: true });
+            const res = await axios.delete(`https://instagram-clone-gi9m.onrender.com/api/v1/post/delete/${post?._id}`, { withCredentials: true });
 
             if (res.data.success) {
                 toast.success(res.data.message);
@@ -46,7 +46,7 @@ const Post = ({ post }) => {
     const likeOrDislikeHandler = async () => {
         try {
             const action = like ? "dislike" : "like";
-            const res = await axios.post(`http://localhost:4000/api/v1/post/${post._id}/${action}`, null, {
+            const res = await axios.post(`https://instagram-clone-gi9m.onrender.com/api/v1/post/${post._id}/${action}`, null, {
                 withCredentials: true
             });
             if (res.data.success) {
@@ -71,7 +71,7 @@ const Post = ({ post }) => {
 
     const commentHandler = async (req, res) => {
         try {
-            const res = await axios.post(`http://localhost:4000/api/v1/post/${post._id}/comment`, { text }, {
+            const res = await axios.post(`https://instagram-clone-gi9m.onrender.com/api/v1/post/${post._id}/comment`, { text }, {
                 withCredentials: true
             });
             if (res.data.success) {
@@ -91,7 +91,7 @@ const Post = ({ post }) => {
 
     const bookMarkHandler = async() =>{
         try{
-            const res = await axios.get(`http://localhost:4000/api/v1/post/${post?._id}/bookmark`,{withCredentials:true});
+            const res = await axios.get(`https://instagram-clone-gi9m.onrender.com/api/v1/post/${post?._id}/bookmark`,{withCredentials:true});
             
             if(res.data.success){
                 toast.success(res?.data?.message);

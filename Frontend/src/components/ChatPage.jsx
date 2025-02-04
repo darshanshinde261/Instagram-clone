@@ -23,7 +23,7 @@ const ChatPage = () => {
 
     const sendMessageHandler = async (receiverId) => {
         try {
-            const res = await axios.post(`http://localhost:4000/api/v1/message/send/${receiverId}`, { textMessage }, {
+            const res = await axios.post(`https://instagram-clone-gi9m.onrender.com/api/v1/message/send/${receiverId}`, { textMessage }, {
                 hearders: {
                     'content-Type': 'application/json'
                 },
@@ -39,7 +39,7 @@ const ChatPage = () => {
     }
     const clearChatHandler = async () => {
         try {
-            const res = await axios.delete(`http://localhost:4000/api/v1/message/deleteall/${selectedUser?._id}`, { withCredentials: true });
+            const res = await axios.delete(`https://instagram-clone-gi9m.onrender.com/api/v1/message/deleteall/${selectedUser?._id}`, { withCredentials: true });
         } catch (error) {
             console.log(error);
         }
